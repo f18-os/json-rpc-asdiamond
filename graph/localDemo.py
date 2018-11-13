@@ -1,9 +1,10 @@
-from node import *
+from graph.node import Node
+from graph.node import increment
 
-leaf1 = node("leaf1")
-leaf2 = node("leaf2")
+leaf1 = Node("leaf1")
+leaf2 = Node("leaf2")
 
-root = node("root", [leaf1, leaf1, leaf2])
+root = Node("root", [leaf1, leaf1, leaf2])
 
 print("graph before increment")
 root.show()
