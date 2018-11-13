@@ -8,8 +8,10 @@ from bsonrpc.framing import (
     JSONFramingNetstring, JSONFramingNone, JSONFramingRFC7464)
 
 # Cut-the-corners TCP Client:
+port = 50001
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-s.connect(('localhost', 50001))
+s.connect(('localhost', port))
+print(f'Connecting to localhost:{port}')
 
 rpc = JSONRpc(s, framing_cls=JSONFramingNone)
 server = rpc.get_peer_proxy()

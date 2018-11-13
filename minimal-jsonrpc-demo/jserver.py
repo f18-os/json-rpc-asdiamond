@@ -23,9 +23,11 @@ class ServerServices(object):
         return txt
 
 
+port = 50001
 # Quick-and-dirty TCP Server:
 ss = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-ss.bind(('localhost', 50001))
+ss.bind(('localhost', port))
+print(f'listening on localhost:{port}')
 ss.listen(10)
 
 while True:
